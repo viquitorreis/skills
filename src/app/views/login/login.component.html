@@ -1,11 +1,14 @@
-<section class="tw-container tw-flex tw-mx-auto tw-items-center tw-justify-center">
-    <div class="tw-mx-auto">
+<section class="h-screen flex mx-auto">
+    <div class="mx-auto my-auto">
         <p-card header="Login" [style]="{ width: '400px' }">
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <input type="email" pInputText formControlName="email" placeholder="E-mail"/>
-                <input type="password" pInputText formControlName="password" placeholder="*******"/>
+            <form class="mb-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-2">
+                    <input class="w-full" type="email" pInputText formControlName="email" placeholder="E-mail"/>
+                </div>
+                <input class="w-full" type="password" pInputText formControlName="password" placeholder="*******"/>
             </form>
-            <p-button type="submit" [disabled]="!loginForm.valid" (onClick)="onSubmit()">Logar</p-button>
+            <p-button label="Registrar" [link]="true" routerLink="/register"></p-button>
+            <p-button label="Logar" type="submit" [disabled]="!loginForm.valid" (onClick)="onSubmit()"></p-button>
         </p-card>
     </div>
 </section>
