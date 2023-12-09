@@ -1,7 +1,11 @@
-<section class="container flex items-center justify-center">
-    <div class="mx-auto">
-        <p-card header="Login" [style]="{ width: '360px' }">
-            <p-button>Logar</p-button>
+<section class="tw-container tw-flex tw-mx-auto tw-items-center tw-justify-center">
+    <div class="tw-mx-auto">
+        <p-card header="Login" [style]="{ width: '400px' }">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <input type="email" pInputText formControlName="email" placeholder="E-mail"/>
+                <input type="password" pInputText formControlName="password" placeholder="*******"/>
+            </form>
+            <p-button type="submit" [disabled]="!loginForm.valid" (onClick)="onSubmit()">Logar</p-button>
         </p-card>
     </div>
 </section>

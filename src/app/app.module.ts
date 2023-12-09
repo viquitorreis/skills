@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +22,10 @@ import { RegisterComponent } from './views/register/register.component';
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputTextModule
   ],
   providers: [
     provideClientHydration()
