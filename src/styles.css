@@ -1,2 +1,48 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import 'primeflex/primeflex.scss';
+
+/* .primary-button {
+    @include styleclass('bg-blue-500 hover:bg-blue-600 border-round transition-colors transition-duration-150 p-3 border-none');
+} */
+
+body {
+    margin: 0 !important;
+}
+
+
+/*BUTTONS*/
+.primary-button {
+    background-color: #001f2a;
+    border: #8e9099;
+    color: #acc7ff;
+}
+
+.primary-button-underline {
+    color: #001f2a;
+}
+
+.primary-button-underline:focus {
+    text-decoration: #001f2a;
+}
+
+/*TEXTOS*/
+.primary-header-color {
+    color: #001f2a;
+    line-height: 0;
+}
+
+/*CARD*/
+.primary-card {
+    width: 400px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    background: rgba( 172, 199, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

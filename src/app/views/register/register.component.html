@@ -1,1 +1,22 @@
-<p>register works!</p>
+<section class="h-screen flex mx-auto">
+    <div class="mx-auto my-auto">
+        <div class="primary-card">
+            <h1 class="primary-header-color text-4xl font-bold mb-6">
+                Registrar
+            </h1>
+            <form class="mb-5" [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
+                <div class="mb-2">
+                    <input class="w-full" type="name" pInputText formControlName="name" placeholder="Nome"/>
+                </div>
+                <div class="mb-2">
+                    <input class="w-full" type="email" pInputText formControlName="email" placeholder="E-mail"/>
+                </div>
+                <input class="w-full" type="password" pInputText formControlName="password" placeholder="*******"/>
+            </form>
+            <div class="w-full flex justify-content-end">
+                <p-button styleClass="primary-button-underline" label="Logar" [link]="true" routerLink="/login"></p-button>
+                <p-button styleClass="primary-button" label="Registrar" type="submit" (onClick)="onSubmit()"></p-button>
+            </div>
+        </div>
+    </div>
+</section>
