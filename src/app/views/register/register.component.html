@@ -17,6 +17,22 @@
                 <p-button styleClass="primary-button-underline" label="Logar" [link]="true" routerLink="/login"></p-button>
                 <p-button styleClass="primary-button" label="Registrar" type="submit" (onClick)="onSubmit()"></p-button>
             </div>
+            <div id="g_id_onload"
+                [data-client_id]="googleClientId"
+                data-context="signin"
+                data-ux_mode="popup"
+                data-auto_select="true"
+                data-itp_support="true"
+                data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin"
+                data-type="standard"
+                data-shape="pill"
+                data-theme="filled_blue"
+                data-text="signin_with"
+                data-size="large"
+                data-logo_alignment="left">
+            </div>
         </div>
     </div>
 </section>

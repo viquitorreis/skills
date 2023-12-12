@@ -35,6 +35,7 @@ body {
 /*CARD*/
 .primary-card {
     width: 400px;
+    max-width: 90%;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 1.5rem;

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-register',
@@ -7,6 +9,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  public googleClientId = environment.googleClientId
+
+  constructor( ) { }
   
   newUserForm = new FormGroup({
     name: new FormControl('', [
@@ -27,5 +32,7 @@ export class RegisterComponent {
     console.log(this.newUserForm.value)
     alert(this.newUserForm.value)
   }
+
+  
 
 }

@@ -1,5 +1,5 @@
-<section class="h-screen flex mx-auto">
-    <div class="mx-auto my-auto">
+<section class="w-full h-screen flex">
+    <div class="w-full flex align-items-center justify-content-center">
         <div class="primary-card">
             <h1 class="primary-header-color text-4xl font-bold mb-6">
                 Login
@@ -10,9 +10,29 @@
                 </div>
                 <input class="w-full" type="password" pInputText formControlName="password" placeholder="*******"/>
             </form>
-            <div class="w-full flex justify-content-end">
+            <div class="w-full flex justify-content-center">
                 <p-button styleClass="primary-button-underline" label="Registrar" [link]="true" routerLink="/register"></p-button>
                 <p-button styleClass="primary-button" label="Logar" type="submit" (onClick)="onSubmit()"></p-button>
+            </div>
+            <div style="height: 3px; background-color: white; border-radius: 500px;" class="w-11 mx-auto my-3"></div>
+            <div class="flex align-items-center justify-content-center">
+                <div id="g_id_onload"
+                    data-client_id=""
+                    data-context="signin"
+                    data-ux_mode="popup"
+                    data-auto_select="true"
+                    data-itp_support="true"
+                    data-callback="handleCredentialResponse">
+                </div>
+    
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-shape="pill"
+                    data-theme="filled_blue"
+                    data-text="signin_with"
+                    data-size="large"
+                    data-logo_alignment="left">
+                </div>
             </div>
         </div>
     </div>
