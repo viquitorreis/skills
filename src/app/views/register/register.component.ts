@@ -11,10 +11,12 @@ import { environment } from '../../../environments/environment.development';
 export class RegisterComponent {
   public googleClientId = environment.googleClientId
 
-  constructor( ) { }
+  constructor(
+    private authService: AuthService
+  ) { }
   
   newUserForm = new FormGroup({
-    name: new FormControl('', [
+    fullName: new FormControl('', [
       Validators.required,
       Validators.minLength(4)
     ]),
@@ -28,11 +30,21 @@ export class RegisterComponent {
     ])
   })
 
-  onSubmit() {
-    console.log(this.newUserForm.value)
-    alert(this.newUserForm.value)
-  }
+  async onSubmit() {
+    if (!this.newUserForm.invalid) {
+      alert("implementar validação")
+    }
 
-  
+    console.log("newUserForm:", this.newUserForm.value)
+    try {
+      await this.authService.register(this.newUserForm.value).then((response: any) => {
+        console.log(response)
+        alert("User criado")
+        this.newUserForm.reset()
+      })
+    } catch (error) {
+      console.error()
+    }
+  }
 
 }
