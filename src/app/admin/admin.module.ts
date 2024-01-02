@@ -5,11 +5,13 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { CardsMainComponent } from './cards-main/cards-main.component';
 
 @NgModule({
   declarations: [
     CardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    CardsMainComponent
   ],
   imports: [
     CommonModule,
