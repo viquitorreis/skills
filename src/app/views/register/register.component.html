@@ -6,16 +6,16 @@
             </h1>
             <form class="mb-5" [formGroup]="newUserForm" (ngSubmit)="onSubmit()">
                 <div class="mb-2">
-                    <input class="w-full" type="name" pInputText formControlName="fullName" placeholder="Nome completo"/>
+                    <input class="w-full" type="name" pInputText formControlName="fullName" placeholder="Nome completo" required/>
                 </div>
                 <div class="mb-2">
-                    <input class="w-full" type="email" pInputText formControlName="email" placeholder="E-mail"/>
+                    <input class="w-full" type="email" pInputText formControlName="email" placeholder="E-mail" required/>
                 </div>
-                <input class="w-full" type="password" pInputText formControlName="password" placeholder="*******"/>
+                <input class="w-full" type="password" pInputText formControlName="password" placeholder="*******" minlength="8" required/>
             </form>
             <div class="w-full flex justify-content-end">
                 <p-button styleClass="primary-button-underline" label="Logar" [link]="true" routerLink="/login"></p-button>
-                <p-button styleClass="primary-button" label="Registrar" type="submit" (onClick)="onSubmit()"></p-button>
+                <p-button styleClass="primary-button" label="Registrar" type="submit" (onClick)="onSubmit()" [disabled]="newUserForm.invalid"></p-button>
             </div>
             <div id="g_id_onload"
                 data-context="signin"

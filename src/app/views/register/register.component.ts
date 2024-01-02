@@ -31,8 +31,8 @@ export class RegisterComponent {
   })
 
   async onSubmit() {
-    if (!this.newUserForm.invalid) {
-      alert("implementar validação")
+    if (this.newUserForm.invalid) {
+      return alert("implementar validação")
     }
 
     console.log("newUserForm:", this.newUserForm.value)

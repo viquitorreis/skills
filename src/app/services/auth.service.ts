@@ -18,4 +18,10 @@ export class AuthService {
     })
   }
 
+  async login(data: any): Promise<any> {
+    this.http.post<any>(`${environment.server}/login`, data).subscribe((user) => {
+      console.log("Novo user:", user)
+      return user
+    })
+  }
 }
