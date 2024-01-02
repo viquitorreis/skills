@@ -4,6 +4,7 @@ import { CardComponent } from './card/card.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MenubarModule } from 'primeng/menubar';
   imports: [
     CommonModule,
     CardModule,
-    MenubarModule
+    MenubarModule,
+    DynamicDialogModule
   ]
 })
 export class AdminModule { }

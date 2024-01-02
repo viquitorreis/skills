@@ -11,13 +11,15 @@ import { LoginComponent } from './views/login/login.component';
 import { NotFound404Component } from './views/not-found-404/not-found-404.component';
 import { RegisterComponent } from './views/register/register.component';
 import { provideHttpClient } from '@angular/common/http';
+import { CardsMainComponent } from './cards-main/cards-main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NotFound404Component,
-    RegisterComponent
+    RegisterComponent,
+    CardsMainComponent
   ],
   imports: [
     BrowserModule,
