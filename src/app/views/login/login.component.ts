@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../environments/environment.development';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,11 +30,16 @@ export class LoginComponent {
       return alert("implementar validação")
     }
 
-    console.log("newUserForm:", this.loginForm.value)
     try {
-      await this.authService.login(this.loginForm.value).then((response: any) => {
-        console.log("user logado com sucesso")
-        this.router.navigate(['dashboard'])
+      this.authService.login(this.loginForm.value).then(async (response: any) => {
+        response = await lastValueFrom(response)
+        console.log(response)
+        if (response?.admin === 'true') {
+          localStorage.setItem("ADMIN", response.admin)
+          this.router.navigate(['admin/dashboard'])
+        } else {
+          this.router.navigate(['dashboard'])
+        }
       })
     } catch (error) {
       console.error(error)

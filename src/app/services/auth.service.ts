@@ -11,17 +11,15 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  async register(data: any) {
-    this.http.post<any>(`${environment.server}/account`, data).subscribe((user) => {
-      console.log("Novo user:", user)
-      return user
-    })
+  register(data: any) {
+    return this.http.post<any>(`${environment.server}/account`, data)
   }
 
-  async login(data: any): Promise<any> {
-    this.http.post<any>(`${environment.server}/login`, data).subscribe((user) => {
-      console.log("Novo user:", user)
-      return user
-    })
+  async login(data: any) {
+    return this.http.post<any>(`${environment.server}/login`, data)
+  }
+
+  getRole() {
+    return localStorage.getItem("ADMIN")
   }
 }
